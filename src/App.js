@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+//LIBRARIES
+import { ThemeProvider } from "styled-components";
+// ASSETS
+import { GlobaleStyles } from "./Assets/GlobalCss";
+import { lightMode } from "./Assets/Colors";
+// PAGES
+import { Home } from "./Pages";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <ThemeProvider theme={lightMode()} >
+   <GlobaleStyles />
+   <Home />
+   </ThemeProvider>
   );
 }
 
